@@ -1,43 +1,43 @@
-const { NUMBER, Sequelize, DataTypes } = require("sequelize/types");
+const Sequelize= require("sequelize");
 const connection = require("../dataBase/connection");
-const Customers = require("./CustomersModel");
 const OwnersPlacesModel = require("./OwnersPlacesModel");
 const AddressModel = require("./AddressModel");
 const CustomersModel = require("./CustomersModel");
 const UsersModel = require("./UsersModel");
 
-const ProjectsModel = sequelize.define("Projects", {
+
+const ProjectsModel = connection.define("Projects", {
   id: {
-    type: DataTypes.INTEGER,
+    type: Sequelize.INTEGER,
     allowNull: false,
     autoIncrement: true,
   },
   typology: {
-    type: DataTypes.TEXT,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
   type: {
-    type: DataTypes.TEXT,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
   definition: {
-    type: DataTypes.TEXT,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
   date: {
-    type: DataTypes.DATE(6),
+    type: Sequelize.DATE(6),
     allowNull: false,
   },
   samae_paid: {
-    type: DataTypes.BOOLEAN,
+    type: Sequelize.BOOLEAN,
     allowNull: false,
   },
   protocol_paid: {
-    type: DataTypes.BOOLEAN,
+    type: Sequelize.BOOLEAN,
     allowNull: false,
   },
   documents_owner_work: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
     allowNull: false,
   },
 });

@@ -1,26 +1,27 @@
-const { NUMBER, Sequelize, DataTypes } = require("sequelize/types");
+const Sequelize= require("sequelize");
+const {Sequelize} = Sequelize;
 const connection = require("../dataBase/connection");
 
-const AddressModel = sequelize.define("Address", {
+const AddressModel = connection.define("Address", {
   street: {
-    type: DataTypes.TEXT,
+    type: Sequelize.TEXT,
     allowNull: false
     
   },
   district: {
-    type: DataTypes.TEXT,
+    type: Sequelize.TEXT,
     allowNull: false
   },
   number_home: {
-    type: DataTypes.INTEGER,
+    type: Sequelize.INTEGER,
     allowNull: false
   },
   cep: {
-    type: DataTypes.INTEGER,
+    type: Sequelize.INTEGER,
     allowNull: false
   },
   geo: {
-    type: DataTypes.GEOGRAPHY,
+    type: Sequelize.GEOGRAPHY,
     allowNull: false
   }
 });

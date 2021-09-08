@@ -1,48 +1,48 @@
-const { NUMBER, Sequelize, DataTypes } = require("sequelize/types");
+const Sequelize= require("sequelize");
 const connection = require("../dataBase/connection");
 
-const CustomersModel = sequelize.define("Customers", {
+const CustomersModel = connection.define("Customers", {
   id: {
-    type: DataTypes.INTEGER,
+    type: Sequelize.INTEGER,
     allowNull: false,
     autoIncrement: true,
   },
   name: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
     allowNull: false,
   },
   phone_number: {
-    type: DataTypes.BIGINT,
+    type: Sequelize.BIGINT,
     allowNull: false,
   },
   whatsapp: {
-    type: DataTypes.BIGINT,
+    type: Sequelize.BIGINT,
   },
   email: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
     allowNull: false,
   },
   cpf: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
     allowNull: false,
   },
   cnpj: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
   },
   cau: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
   },
   crea: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
   },
   title: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
   },
   rnp: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
   },
   record: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
   }
 });
 

@@ -1,4 +1,3 @@
-require("dotenv").config();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const express = require("express");
@@ -29,15 +28,32 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+dataBase
+  .authenticate()
+  .then(() => {
+    console.log("successfully connected");
+
+}).catch((error) => {
+  console.log(error);
+})
+
+
 const indexRouter = require("./routes/index");
-const projectsRouter = require("./routes/projectRoutes");
+const projectRouter = require("./routes/projectRoutes");
 const userRouter = require("./routes/userRoutes");
 const customerRouter = require("./routes/customerRoutes");
+const operatorRouter = require("./routes/operatorRoutes");
+const OwnerPlacesrouter = require("./routes/ownerPlaceRoutes");
+const addressRouter = require("./routes/addressRoutes");
+
 const { patch } = require("./routes/index");
 
 app.use("/", indexRouter);
-app.use("/", projectsRouter);
+app.use("/", projectRouter);
 app.use("/", userRouter);
 app.use("/", customerRouter);
+app.use("/", operatorRouter);
+app.use("/", OwnerPlacesrouter);
+app.use("/", addressRouter);
 
 app.listen(port, () => console.log(`Server running at port ${port}`));

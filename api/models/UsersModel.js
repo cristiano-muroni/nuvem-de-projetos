@@ -1,17 +1,17 @@
-const { NUMBER, Sequelize, DataTypes } = require("sequelize/types");
+const Sequelize= require("sequelize");
 const connection = require("../dataBase/connection");
 
-const UsersModel = sequelize.define("Users", {
+const UsersModel = connection.define("Users", {
   email: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
     allowNull: false,
   },
   password: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
     allowNull: false,
   },
   admin: {
-    type: DataTypes.BOOLEAN,
+    type: Sequelize.BOOLEAN,
     allowNull: false,
   },
 });
