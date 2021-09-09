@@ -18,10 +18,6 @@ const AddressModel = connection.define("Address", {
   cep: {
     type: Sequelize.INTEGER,
     allowNull: false
-  },
-  geo: {
-    type: Sequelize.GEOGRAPHY,
-    allowNull: false
   }
 });
 

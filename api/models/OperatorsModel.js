@@ -1,7 +1,7 @@
 const Sequelize= require("sequelize");
 const connection = require("../dataBase/connection");
 
-const OperatorsModel = connection.define("Users", {
+const OperatorsModel = connection.define("Operadors", {
   name: {
     type: Sequelize.STRING,
     allowNull: false,

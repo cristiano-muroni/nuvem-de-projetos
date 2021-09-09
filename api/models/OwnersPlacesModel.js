@@ -2,7 +2,7 @@ const Sequelize= require("sequelize");
 const {DataTypes} = Sequelize;
 const connection = require("../dataBase/connection");
 
-const OwnersPlacesModel = connection.define("Customers", {
+const OwnersPlacesModel = connection.define("Owners_places", {
   id: {
     type: Sequelize.INTEGER,
     allowNull: false,
