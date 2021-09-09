@@ -6,7 +6,8 @@ const OwnersPlacesModel = connection.define("Customers", {
   id: {
     type: Sequelize.INTEGER,
     allowNull: false,
-    autoIncrement: true,
+    primaryKey: true,
+    autoIncrement: true
   },
   name: {
     type: Sequelize.STRING,

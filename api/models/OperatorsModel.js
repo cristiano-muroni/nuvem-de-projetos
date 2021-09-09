@@ -9,6 +9,7 @@ const OperatorsModel = connection.define("Users", {
   id_employee: { // employee registration number
     type:Sequelize.STRING,
     allowNull: false,
+    primaryKey: true
   },
   cpf: {
     type: Sequelize.BOOLEAN,

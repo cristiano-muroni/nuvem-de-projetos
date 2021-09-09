@@ -1,5 +1,4 @@
 const Sequelize= require("sequelize");
-const {Sequelize} = Sequelize;
 const connection = require("../dataBase/connection");
 
 const AddressModel = connection.define("Address", {

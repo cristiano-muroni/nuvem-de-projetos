@@ -11,6 +11,7 @@ const ProjectsModel = connection.define("Projects", {
     type: Sequelize.INTEGER,
     allowNull: false,
     autoIncrement: true,
+    primaryKey: true
   },
   typology: {
     type: Sequelize.TEXT,
