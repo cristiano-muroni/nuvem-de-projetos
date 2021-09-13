@@ -29,6 +29,6 @@ const OperatorsModel = connection.define("Operadors", {
   },
 });
 
-OperatorsModel.sync({force: true});
+// "CAUTION" drop and create all tables , to make in all model files --> OperatorsModel.sync({force: true});
 
 module.exports = OperatorsModel;

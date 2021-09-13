@@ -34,6 +34,6 @@ const OwnersPlacesModel = connection.define("Owners_places", {
   }
 });
 
-OwnersPlacesModel.sync({force: true});
+// "CAUTION" drop and create all tables , to make in all model files --> "OwnersPlacesModel.sync({force: true});"
 
 module.exports = OwnersPlacesModel;

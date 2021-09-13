@@ -21,6 +21,6 @@ const AddressModel = connection.define("Address", {
   }
 });
 
-AddressModel.sync({force: true});
+// "CAUTION" drop and create all tables , to make in all model files --> AddressModel.sync({force: true});
 
 module.exports = AddressModel;

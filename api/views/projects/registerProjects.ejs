@@ -1,0 +1,46 @@
+<%- include('../partials/header') %>
+<div class="container"> 
+<hr>
+<div class="card">
+  <h5 class="card-header">Cadastro de projetos</h5>
+  <div class="card-body">    
+    <form>
+      <div class="form-row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Id do Proprietário da obra">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Id do autor do projeto">
+        </div>
+      </div>
+      <h5 class="card-title">Tipologia</h5>
+      <input class="form-control" type="text" name="title" placeholder="Definir a tipologia do projeto"><br>
+      <h5 class="card-title">Tipo</h5>
+      <input class="form-control" type="text" name="title" placeholder="Qual o tipo"><br>    
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Etapa do processo</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>      
+        </select>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+        <label class="form-check-label" for="inlineCheckbox1">Taxa Samae foi paga?</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+        <label class="form-check-label" for="inlineCheckbox2">Taxa protocolo foi paga</label><br><br>
+      </div>
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="customFile"><br>
+        <label class="custom-file-label" for="customFile">Anexar documentos do proprietário</label><br>
+      </div>
+      <button class="btn btn-primary">Cadastrar</button>
+    </form>       
+  </div>
+</div>
+<hr>
+</div><!-- /.container -->
+<%- include('../partials/footer') %>

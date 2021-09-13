@@ -16,6 +16,6 @@ const UsersModel = connection.define("Users", {
   },
 });
 
-UsersModel.sync({force: true});
+// "CAUTION" drop and create all tables , to make in all model files --> UsersModel.sync({force: true});
 
 module.exports = UsersModel;
