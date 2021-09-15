@@ -1,23 +1,55 @@
 <%- include('../partials/header') %>
-<div class="container"> 
+<div class="container"><br>
 <hr>
 <div class="card">
   <h5 class="card-header">Cadastro de projetos</h5>
   <div class="card-body">    
-    <form>
-      <div class="form-row">
-        <div class="col">
-          <input type="text" class="form-control" placeholder="Id do Proprietário da obra">
+    <form>       
+     
+        <div class="form-group">
+          <label for="inputAddress">Endereço</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Rua dos Bobos, nº 0">
         </div>
-        <div class="col">
-          <input type="text" class="form-control" placeholder="Id do autor do projeto">
+        <div class="form-group">
+          <label for="inputAddress2">Endereço 2</label>
+          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartamento, hotel, casa, etc.">
         </div>
-      </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">Cidade</label>
+            <input type="text" class="form-control" id="inputCity">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputEstado">Estado</label>
+            <select id="inputEstado" class="form-control">
+              <option selected>Escolher...</option>
+              <option>...</option>
+            </select>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputCEP">CEP</label>
+            <input type="text" class="form-control" id="inputCEP">
+          </div>
+        </div>          
       <h5 class="card-title">Tipologia</h5>
       <input class="form-control" type="text" name="title" placeholder="Definir a tipologia do projeto"><br>
       <h5 class="card-title">Tipo</h5>
-      <input class="form-control" type="text" name="title" placeholder="Qual o tipo"><br>    
-      <div class="form-group">
+      <input class="form-control" type="text" name="title" placeholder="Qual o tipo"><br> 
+      <h5 class="card-title">Definição</h5>
+      <input class="form-control" type="text" name="title" placeholder="Definir os detalhes do projeto"><br>      
+        <div class="form-row align-items-center">
+          <div class="col-auto">
+            <label class="sr-only" for="inlineFormInput">Id do proprietário</label>
+            <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Digite o Id do proprietário">
+            <small id="passwordHelpBlock" class="form-text text-muted">
+              Digite o Id do proprietário, para adicionar os dados dele nesse projeto.
+            </small>            
+          </div>               
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-2">Procurar</button><br><br>
+          </div>
+        </div>       
+        <br><br><div class="form-group">
         <label for="exampleFormControlSelect1">Etapa do processo</label>
         <select class="form-control" id="exampleFormControlSelect1">
           <option>1</option>
@@ -36,6 +68,10 @@
       <div class="custom-file">
         <input type="file" class="custom-file-input" id="customFile"><br>
         <label class="custom-file-label" for="customFile">Anexar documentos do proprietário</label><br>
+      </div>
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="customFile"><br>
+        <label class="custom-file-label" for="customFile">Anexar a planta do projeto</label><br>
       </div>
       <button class="btn btn-primary">Cadastrar</button>
     </form>       

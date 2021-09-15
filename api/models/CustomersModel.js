@@ -53,7 +53,5 @@ const CustomersModel = connection.define("Customers", {
 UsersModel.hasOne(CustomersModel);
 CustomersModel.belongsTo(UsersModel);
 
-// "CAUTION" drop and create all tables , to make in all model files --> 
-CustomersModel.sync({force: true});
-
+// "CAUTION" drop and create all tables , to make in all model files --> CustomersModel.sync({force: true});
 module.exports = CustomersModel;

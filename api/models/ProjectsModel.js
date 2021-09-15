@@ -68,7 +68,5 @@ ProjectsModel.belongsTo(OwnersPlacesModel);
 ProjectsModel.belongsTo(OwnersPlacesModel);
 OwnersPlacesModel.hasMany(ProjectsModel);
 
-// "CAUTION" drop and create all tables , to make in all model files --> 
-ProjectsModel.sync({ force: true });
-
+// "CAUTION" drop and create all tables , to make in all model files --> ProjectsModel.sync({ force: true });
 module.exports = ProjectsModel;
