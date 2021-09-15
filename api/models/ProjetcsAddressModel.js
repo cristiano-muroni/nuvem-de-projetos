@@ -1,7 +1,7 @@
 const Sequelize= require("sequelize");
 const connection = require("../dataBase/connection");
 
-const AddressModel = connection.define("Address", {
+const ProjectsAddressModel = connection.define("ProjectAddress", {
   street: {
     type: Sequelize.TEXT,
     allowNull: false
@@ -21,6 +21,6 @@ const AddressModel = connection.define("Address", {
   }
 });
 
-// "CAUTION" drop and create all tables , to make in all model files --> AddressModel.sync({force: true});
+ProjectsAddressModel.sync({force: true});
 
-module.exports = AddressModel;
+module.exports = ProjectsAddressModel;

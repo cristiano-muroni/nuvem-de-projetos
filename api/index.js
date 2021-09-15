@@ -14,7 +14,8 @@ const ProjectsModel = require("./models/ProjectsModel");
 const OwnersPlacesModel = require("./models/OwnersPlacesModel");
 const OperatorsModel = require("./models/OperatorsModel");
 const CustomersModel = require("./models/CustomersModel");
-const AddressModel = require("./models/AddressModel");
+const ProjectsAddressModel =require("./models/ProjetcsAddressModel");
+const OwnersAddressModel = require("./models/OwnersAddressModel");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

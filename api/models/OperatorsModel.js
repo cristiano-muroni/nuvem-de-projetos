@@ -1,5 +1,6 @@
 const Sequelize= require("sequelize");
 const connection = require("../dataBase/connection");
+const UsersModel = require("./UsersModel");
 
 const OperatorsModel = connection.define("Operadors", {
   name: {
@@ -29,6 +30,11 @@ const OperatorsModel = connection.define("Operadors", {
   },
 });
 
-// "CAUTION" drop and create all tables , to make in all model files --> OperatorsModel.sync({force: true});
+// Operators table relationships
+UsersModel.hasOne(OperatorsModel);
+OperatorsModel.belongsTo(UsersModel);
+
+// "CAUTION" drop and create all tables , to make in all model files --> 
+OperatorsModel.sync({force: true});
 
 module.exports = OperatorsModel;

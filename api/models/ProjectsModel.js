@@ -1,7 +1,8 @@
 const Sequelize = require("sequelize");
 const connection = require("../dataBase/connection");
 const OwnersPlacesModel = require("./OwnersPlacesModel");
-const AddressModel = require("./AddressModel");
+const OwnersAddressModel = require("./OwnersAddressModel");
+const ProjectsAddressModel = require("./ProjetcsAddressModel");
 const CustomersModel = require("./CustomersModel");
 const UsersModel = require("./UsersModel");
 const OperatorsModel = require("./OperatorsModel");
@@ -44,58 +45,30 @@ const ProjectsModel = connection.define("Projects", {
     type: Sequelize.BOOLEAN, //expected yes or not to indicate that the project is finished or not.
     allowNull: false,
   },
-  documents_owner_work: {
+  documents_owner_work: { //documents of owner place
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  project_file: {  //files of property plan
     type: Sequelize.STRING,
     allowNull: false,
   },
 });
 
 // Projects table relationships
-AddressModel.hasOne(ProjectsModel);
-ProjectsModel.belongsTo(AddressModel, {
-  foreignKey: {
-    name: "place",
-  },
-});
+ProjectsAddressModel.hasMany(ProjectsModel);
+ProjectsModel.belongsTo(ProjectsAddressModel);
 
-CustomersModel.hasOne(ProjectsModel);
-ProjectsModel.belongsTo(CustomersModel, {
-  foreignKey: {
-    name: "project_author",
-  },
-});
+CustomersModel.hasMany(ProjectsModel);
+ProjectsModel.belongsTo(CustomersModel);
 
-OwnersPlacesModel.hasOne(ProjectsModel);
+OwnersPlacesModel.hasMany(ProjectsModel);
 ProjectsModel.belongsTo(OwnersPlacesModel);
 
-// Customers table relationships
-UsersModel.hasOne(CustomersModel);
-CustomersModel.belongsTo(UsersModel);
-
-AddressModel.hasOne(CustomersModel);
-CustomersModel.belongsTo(AddressModel);
-
-ProjectsModel.hasOne(CustomersModel);
-CustomersModel.hasMany(ProjectsModel, {
-  foreignKey: {
-    name: "project_author",
-  },
-});
-
-// OwnersPlaces table relationships
-UsersModel.hasOne(OwnersPlacesModel);
-OwnersPlacesModel.belongsTo(UsersModel);
-
-AddressModel.hasOne(OwnersPlacesModel);
-OwnersPlacesModel.belongsTo(AddressModel);
-
-ProjectsModel.hasOne(OwnersPlacesModel);
+ProjectsModel.belongsTo(OwnersPlacesModel);
 OwnersPlacesModel.hasMany(ProjectsModel);
 
-// Operators table relationships
-UsersModel.hasOne(OperatorsModel);
-OperatorsModel.belongsTo(UsersModel);
-
-// "CAUTION" drop and create all tables , to make in all model files --> ProjectsModel.sync({ force: true });
+// "CAUTION" drop and create all tables , to make in all model files --> 
+ProjectsModel.sync({ force: true });
 
 module.exports = ProjectsModel;
