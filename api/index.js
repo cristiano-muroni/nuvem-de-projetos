@@ -5,6 +5,11 @@ const app = express();
 const path = require("path");
 const port = process.env.PORT || 3000;
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(cors());
+app.use(express.static("public"));//statics files
+
 // Data Base Connection
 const dataBase = require("./dataBase/connection");
 
@@ -16,12 +21,6 @@ const OperatorsModel = require("./models/OperatorsModel");
 const CustomersModel = require("./models/CustomersModel");
 const ProjectsAddressModel =require("./models/ProjetcsAddressModel");
 const OwnersAddressModel = require("./models/OwnersAddressModel");
-
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use(cors());
-
-app.use(express.static("public"));//statics files
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");

@@ -4,6 +4,4 @@ const connection = new Sequelize("nuvem_projetos", "root", "root", {
   host: "127.0.0.1",
 });
 
-
-
 module.exports = connection;
