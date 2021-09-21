@@ -1,10 +1,12 @@
 const usersModel = require("../models/UsersModel");
+
 const createViewUserAdmin = (req, res) => {
   res.render("users/createUsersAdmin");
 };
 
-const createUserAdmin = async(req, res) => {
-    await usersModel.create(req.body)  
+const createUserAdmin = async (req, res) => {
+    await usersModel.create(req.body) 
+    console.log(req.body) 
   res.send("create users");
 };
 

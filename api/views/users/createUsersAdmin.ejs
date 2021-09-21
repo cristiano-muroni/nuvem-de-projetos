@@ -4,7 +4,7 @@
         <div class="card">
             <h5 class="card-header text-primary">Cadastro de Usuários</h5>
             <div class="card-body">
-                <form method="POST">
+                <form method="POST" action="/users/create/admin">
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" class="form-control" id="email"
@@ -16,8 +16,8 @@
                             placeholder="de 8 a 20 caracteres">
                     </div>
                     <div class="form-group">
-                        <label for="repeatpassword">Repita a senha</label>
-                        <input type="password" class="form-control" id="repeatpassword"
+                        <label for="new-password">Repita a senha</label>
+                        <input type="new-password" class="form-control" id="new-password"
                             placeholder="de 8 a 20 caracteres">
                     </div>
                     <h5 class="card-title">Defina aqui os níveis de acesso</h5>
