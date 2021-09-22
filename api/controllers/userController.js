@@ -5,10 +5,21 @@ const createViewUserAdmin = (req, res) => {
 };
 
 const createUserAdmin = async (req, res) => {
-    await usersModel.create(req.body) 
-    console.log(req.body) 
-  res.send("create users");
-};
+  const essentialBody = {
+    email: req.body.email,
+    password: req.body.password,
+    access: req.body.access    
+  }; 
+  console.log(essentialBody);
+  try {
+    const createUser = await usersModel.create(essentialBody);    
+    console.log(req.body)     
+    res.send("create users");
+    
+  } catch (error) {
+    res.send(error)    
+  }
+ }        
 
 const listViewUsers = (req, res) => {
   res.render("users/listUsers");

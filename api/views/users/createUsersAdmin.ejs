@@ -7,39 +7,36 @@
                 <form method="POST" action="/users/create/admin">
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email"
-                            placeholder="nome@exemplo.com">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="nome@exemplo.com">
                     </div>
                     <div class="form-group">
                         <label for="password">Senha</label>
-                        <input type="password" class="form-control" id="password"
-                            placeholder="de 8 a 20 caracteres">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="de 8 a 20 caracteres">
                     </div>
                     <div class="form-group">
-                        <label for="new-password">Repita a senha</label>
-                        <input type="new-password" class="form-control" id="new-password"
-                            placeholder="de 8 a 20 caracteres">
+                        <label for="password">Repita a senha</label>
+                        <input type="password" class="form-control" id="new_password" name="new_password" placeholder="de 8 a 20 caracteres">
                     </div>
                     <h5 class="card-title">Defina aqui os níveis de acesso</h5>
                     <div class="row">
                         <legend class="col-form-label col-sm-2 pt-0">Níveis</legend>
                         <div class="col-sm-10">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="admin"
+                                <input class="form-check-input" type="radio" name="access" id="admin"
                                     value="admin" checked>
                                 <label class="form-check-label" for="admin">
                                     Admin
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="edit"
+                                <input class="form-check-input" type="radio" name="access" id="edit"
                                     value="edit">
                                 <label class="form-check-label" for="edit">
                                     Editor
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gridRadios" id="view"
+                                <input class="form-check-input" type="radio" name="access" id="view"
                                     value="view">
                                 <label class="form-check-label" for="view">
                                     Visualizar

@@ -34,5 +34,6 @@ const OperatorsModel = connection.define("Operadors", {
 UsersModel.hasOne(OperatorsModel);
 OperatorsModel.belongsTo(UsersModel);
 
-// "CAUTION" drop and create all tables , to make in all model files --> OperatorsModel.sync({force: true});
+OperatorsModel.sync();
+
 module.exports = OperatorsModel;

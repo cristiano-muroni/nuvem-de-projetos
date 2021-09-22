@@ -43,7 +43,6 @@ OwnersPlacesModel.belongsTo(UsersModel);
 OwnersAddressModel.hasOne(OwnersPlacesModel);
 OwnersPlacesModel.belongsTo(OwnersAddressModel);
 
-// "CAUTION" drop and create all tables , to make in all model files --> OwnersPlacesModel.sync({force: true});
-
+OwnersPlacesModel.sync();
 
 module.exports = OwnersPlacesModel;

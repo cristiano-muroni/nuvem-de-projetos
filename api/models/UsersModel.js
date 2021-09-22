@@ -10,11 +10,12 @@ const UsersModel = connection.define("Users", {
     type: Sequelize.STRING,
     allowNull: false,
   },
-  admin: {
-    type: Sequelize.BOOLEAN,
+  access: {
+    type: Sequelize.STRING,
     allowNull: false,
   },
 });
 
 UsersModel.sync();
+
 module.exports = UsersModel;

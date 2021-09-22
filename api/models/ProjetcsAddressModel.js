@@ -21,5 +21,6 @@ const ProjectsAddressModel = connection.define("ProjectAddress", {
   }
 });
 
-// caution ---> ProjectsAddressModel.sync({force: true});
+ProjectsAddressModel.sync();
+
 module.exports = ProjectsAddressModel;

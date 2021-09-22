@@ -21,6 +21,6 @@ const OwnersAddressModel = connection.define("OwnerAddress", {
   }
 });
 
-// caution ----> OwnersAddressModel.sync({force: true});
+OwnersAddressModel.sync();
 
 module.exports = OwnersAddressModel;
