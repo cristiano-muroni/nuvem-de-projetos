@@ -1,34 +1,31 @@
 <%- include('../partials/header') %>
     <div class="container"><br>
-      <h1>Listar</h1>
+      <h1>Listar Usuários</h1>
+      <a>Acesso administrativo</a>
         <hr>
         <table class="table table-dark table-striped">
           <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
+              <th scope="col">Id</th>
+              <th scope="col">Email</th>
+              <th scope="col">Senha</th>
+              <th scope="col">Nível de acesso</th>
+              <th scope="col">Ações</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
+            <% users.map(user => { %>
+              <tr>                
+                <td><%= user.id %></td>
+                <td><%= user.email %></td>
+                <td>*******</td>
+                <td><%= user.access %></td>
+                <td>                  
+                  <a type="button" href="/users/editViewUsers/<%= user.id %>" class="btn btn-outline-primary">Editar</a>
+                  <a type="button" href="/users/deleteUsers/<%= user.id %>" class="btn btn-outline-danger">Deletar</a>                
+                </td>
+              </tr>                              
+            <% }) %>                          
           </tbody>            
           </table>
         <hr>
