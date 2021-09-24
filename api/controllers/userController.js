@@ -32,7 +32,7 @@ const listAllUsers = async (req, res) => {
 const editViewUsers = async (req, res) => {
   try {
     const usersEdit = await usersModel.findByPk(req.params.id);    
-    res.render("users/updateUsers",{usersEdit});
+    res.render("./users/updateUsers",{usersEdit});
   } catch (error) {
     res.send(error)
   }
@@ -45,6 +45,7 @@ const editUsers = async (req, res) => {
         id: req.params.id,
       }
     })
+    console.log(req.body)
     res.redirect("/users/listUsers");
   } catch (error) {
     res.send(error);
