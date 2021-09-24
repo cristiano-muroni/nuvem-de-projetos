@@ -13,12 +13,12 @@
               <th scope="col">Ações</th>
             </tr>
           </thead>
-          <tbody>
-            <% users.map(user => { %>
+          <tbody>          
+            <% users.map(user => { %>             
               <tr>                
                 <td><%= user.id %></td>
                 <td><%= user.email %></td>
-                <td>*******</td>
+                <td><%=user.password%></td>
                 <td><%= user.access %></td>
                 <td>                  
                   <a type="button" href="/users/editViewUsers/<%= user.id %>" class="btn btn-outline-primary">Editar</a>

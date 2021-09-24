@@ -4,7 +4,7 @@
         <div class="card">
             <h5 class="card-header text-primary">Cadastro de Usuários</h5>
             <div class="card-body">
-                <form method="POST" action="/users/create/admin">
+                <form method="POST" action="/users/updateUsers/:id">                   
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="nome@exemplo.com" value="<%= usersEdit.email %>">
