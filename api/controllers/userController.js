@@ -33,7 +33,7 @@ const editViewUsers = async (req, res) => {
   try {
     const usersEdit = await usersModel.findById(req.params.id);
     console.log(usersEdit)
-    res.render("users/updateUsers");
+    res.render("users/updateUsers",{usersEdit});
   } catch (error) {
     res.send(error)
   }
