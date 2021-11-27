@@ -60,7 +60,7 @@ const deleteUsers = async (req, res) => {
         id: req.params.id,
       }
     });
-    res.redirect("users/listUsers");
+    res.redirect("/users/listUsers");
   } catch (error) {
     res.send(error);
   }
