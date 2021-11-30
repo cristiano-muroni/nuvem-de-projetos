@@ -53,6 +53,6 @@ const CustomersModel = connection.define("Customers", {
 UsersModel.hasOne(CustomersModel);
 CustomersModel.belongsTo(UsersModel);
 
-CustomersModel.sync();
+CustomersModel.sync({ force: true });
 
 module.exports = CustomersModel;

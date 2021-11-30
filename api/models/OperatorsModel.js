@@ -34,6 +34,6 @@ const OperatorsModel = connection.define("Operadors", {
 UsersModel.hasOne(OperatorsModel);
 OperatorsModel.belongsTo(UsersModel);
 
-OperatorsModel.sync();
+OperatorsModel.sync({ force: true });
 
 module.exports = OperatorsModel;

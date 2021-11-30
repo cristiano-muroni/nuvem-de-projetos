@@ -43,6 +43,6 @@ OwnersPlacesModel.belongsTo(UsersModel);
 OwnersAddressModel.hasOne(OwnersPlacesModel);
 OwnersPlacesModel.belongsTo(OwnersAddressModel);
 
-OwnersPlacesModel.sync();
+OwnersPlacesModel.sync({ force: true });
 
 module.exports = OwnersPlacesModel;

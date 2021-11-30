@@ -68,6 +68,6 @@ ProjectsModel.belongsTo(OwnersPlacesModel);
 ProjectsModel.belongsTo(OwnersPlacesModel);
 OwnersPlacesModel.hasMany(ProjectsModel);
  
-ProjectsModel.sync();
+ProjectsModel.sync({ force: true });
 
 module.exports = ProjectsModel;

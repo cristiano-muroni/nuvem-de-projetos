@@ -16,6 +16,6 @@ const UsersModel = connection.define("Users", {
   },
 });
 
-UsersModel.sync();
+UsersModel.sync({ force: true });
 
 module.exports = UsersModel;
